@@ -6,7 +6,11 @@
         <% projects.forEach(project => { %>
             <li>
                 <a href="/projects/project-details/<%= project.id %>"><%= project.name %></a>
+
+                    <a href="#" class="delete-link">Delete</a>
+
             </li>
+            
         <% }); %>
     </ul>
     <a href="/projects/create-project" class="create-button">Create New Project</a>

@@ -42,10 +42,10 @@
       .filters .filter-options form .apply-button:hover {
         background-color: #0062cc; }
 
-.issue-list {
+#issue-list {
   list-style: none;
   margin-bottom: 20px; }
-  .issue-list li {
+  #issue-list li {
     background-color: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -53,16 +53,16 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; }
-    .issue-list li .label-box {
+    #issue-list li .label-box {
       width: 20px;
       height: 20px;
       border-radius: 5px;
       margin-right: 10px; }
-    .issue-list li .labels {
+    #issue-list li .labels {
       display: flex;
       flex-wrap: wrap;
       margin-top: 8px; }
-      .issue-list li .labels .label {
+      #issue-list li .labels .label {
         display: inline-block;
         margin-right: 10px;
         margin-bottom: 5px;
@@ -70,21 +70,21 @@
         border-radius: 5px;
         font-size: 12px;
         color: #fff; }
-    .issue-list li .issue-details {
+    #issue-list li .issue-details {
       margin-top: 8px;
       font-size: 14px; }
-      .issue-list li .issue-details .issue-title {
+      #issue-list li .issue-details .issue-title {
         font-weight: bold; }
-      .issue-list li .issue-details .issue-description {
+      #issue-list li .issue-details .issue-description {
         color: #333;
         margin-top: 5px; }
-      .issue-list li .issue-details .author {
+      #issue-list li .issue-details .author {
         margin-top: 5px; }
-    .issue-list li a {
+    #issue-list li a {
       text-decoration: none;
       color: #333;
       transition: color 0.3s ease; }
-      .issue-list li a:hover {
+      #issue-list li a:hover {
         color: #007bff; }
 
 .create-issue-button {

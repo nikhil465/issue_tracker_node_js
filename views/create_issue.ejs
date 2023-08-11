@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/create_issue.css">
 <h2>Create New Issue</h2>
-<form class="issue-form" action="/issues/create" method="post">
+<form class="issue-form" action="/issues/create-issue/<%= locals.projectId %>" method="post">
     <div class="form-group">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" placeholder="Enter issue title" required>
@@ -12,11 +12,12 @@
     <div class="form-group">
         <label for="labels">Labels</label>
         <div class="checkbox-group">
-            <label><input type="checkbox" name="label" value="bug"> Bug</label>
-            <label><input type="checkbox" name="label" value="feature"> Feature</label>
-            <label><input type="checkbox" name="label" value="enhancement"> Enhancement</label>
-            <label><input type="checkbox" name="label" value="documentation"> Documentation</label>
-            <label><input type="checkbox" name="label" value="other"> Other</label>
+            <label><input type="checkbox" name="label" value="Bug"> Bug</label>
+            <label><input type="checkbox" name="label" value="UI Improvement"> UI Improvement</label>
+            <label><input type="checkbox" name="label" value="Documentation"> Documentation</label>
+            <label><input type="checkbox" name="label" value="Enhancement"> Enhancement</label>
+            <label><input type="checkbox" name="label" value="Duplicate"> Duplicate</label>
+            <label><input type="checkbox" name="label" value="Other"> Other</label>
         </div>
     </div>
     <div class="form-group">

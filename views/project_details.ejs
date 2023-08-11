@@ -7,11 +7,9 @@
         <form id="filter-form" action="/issues/filter" method="post">
             <label for="filter-labels">Filter by Labels:</label>
             <div class="checkbox-group">
-                <label><input type="checkbox" name="label" value="bug"> Bug</label>
-                <label><input type="checkbox" name="label" value="feature"> Feature</label>
-                <label><input type="checkbox" name="label" value="enhancement"> Enhancement</label>
-                <label><input type="checkbox" name="label" value="documentation"> Documentation</label>
-                <label><input type="checkbox" name="label" value="other"> Other</label>
+                <% locals.project.labels.forEach(label => { %>
+                    <label><input type="checkbox" name="label" value="<%= label %>"> <%= label %></label>
+                <% }); %>
             </div>
 
             <label for="filter-author">Filter by Author:</label>
@@ -25,7 +23,7 @@
     </div>
 </div>
 
-<ul class="issue-list">
+<ul id="issue-list">
     <!-- Issue items will be dynamically added here -->
 
     <% locals.project.issues.forEach(issue => { %>
@@ -46,4 +44,6 @@
 </ul>
 
 <a href="/issues/create-issue/<%= locals.project._id %>" class="create-issue-button">Create New Issue</a>
+<div id="issue-data" data="<%=JSON.stringify(project.issues)%>"></div>
+<script src="/js/filterIssues.js"></script>
         
