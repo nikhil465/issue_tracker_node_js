@@ -1,0 +1,36 @@
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+
+    h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+
+            li {
+                margin-right: 20px;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #f0f0f0;
+                    }
+                }
+            }
+        }
+    }
+}

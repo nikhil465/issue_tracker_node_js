@@ -1,0 +1,125 @@
+$primary-color: #007bff;
+$secondary-color: #333;
+$background-color: #f0f0f0;
+$label-colors: (
+    bug: #e74c3c,
+    feature: #2ecc71,
+    enhancement: #3498db,
+    documentation: #9b59b6,
+    other: #95a5a6
+);
+
+.filters {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: $secondary-color;
+    }
+
+    select,
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    button.filter-button {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}
+
+.issue-list {
+    list-style: none;
+    margin-bottom: 20px;
+
+    li {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+
+        .label-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .labels {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 8px;
+
+            .label {
+                display: inline-block;
+                margin-right: 10px;
+                margin-bottom: 5px;
+                padding: 4px 8px;
+                border-radius: 5px;
+                font-size: 12px;
+                color: #fff;
+            }
+        }
+
+        .issue-details {
+            margin-top: 8px;
+            font-size: 14px;
+
+            .issue-title {
+                font-weight: bold;
+            }
+
+            .issue-description {
+                color: $secondary-color;
+                margin-top: 5px;
+            }
+
+            .author {
+                margin-top: 5px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $secondary-color;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.create-issue-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}

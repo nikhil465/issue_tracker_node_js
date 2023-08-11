@@ -1,0 +1,10 @@
+$primary-color: #007bff;
+$secondary-color: #333;
+$background-color: #f0f0f0;
+
+.footer {
+    background-color: $background-color;
+    color: $secondary-color;
+    padding: 20px 0;
+    text-align: left;
+}

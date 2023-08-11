@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/project_details.css">
+<h2>Project Detail: Project A</h2>
+            
+<div class="filters">
+    <label for="labels">Filter by Labels:</label>
+    <select id="labels" multiple>
+        <option value="bug">Bug</option>
+        <option value="feature">Feature</option>
+        <!-- ... More label options ... -->
+    </select>
+    <label for="author">Filter by Author:</label>
+    <input type="text" id="author" placeholder="Enter author name">
+    <label for="search">Search by Title or Description:</label>
+    <input type="text" id="search" placeholder="Search...">
+    <button class="filter-button">Apply Filters</button>
+</div>
+
+<ul class="issue-list">
+    <!-- Issue items will be dynamically added here -->
+
+        <li>
+            <div class="label-box" style="background-color: #e74c3c"></div>
+            <div class="labels">
+                    <span class="label" style="background-color: #e74c3c">Bug</span>
+
+            </div>
+            <div class="issue-details">
+                <div class="issue-title">Issue: Hello</div>
+                <div class="issue-description">Hi</div>
+                <div class="author">Author: Nikhil</div>
+            </div>
+        </li>
+   
+</ul>
+
+<a href="#" class="create-issue-button">Create New Issue</a>
+        

@@ -12,7 +12,6 @@ const projectSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      req,
     },
     issues: [
       {
