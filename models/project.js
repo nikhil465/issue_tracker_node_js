@@ -19,6 +19,11 @@ const projectSchema = new mongoose.Schema(
         ref: "Issue",
       },
     ],
+    labels: [
+      {
+        type: String,
+      },
+    ],
   },
   {
     timestamps: true,

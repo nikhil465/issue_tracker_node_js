@@ -21,8 +21,19 @@ module.exports.create = async function (req, res) {
   }
 };
 
-module.exports.projectDetails = function(req, res){
-    return res.render('project_details', {
-        title: "Issue Tracker | Project Details"
+module.exports.projectDetails = async function (req, res) {
+  try {
+    let project = await Project.findById(req.params.id).populate({
+      path: "issues",
     });
-}
+
+    console.log("Result project : ", project);
+
+    return res.render("project_details", {
+      title: "Issue Tracker | Project Details",
+      project: project,
+    });
+  } catch (error) {
+    console.log("Error in project details : ", error);
+  }
+};

@@ -1,37 +1,49 @@
 <link rel="stylesheet" href="/css/project_details.css">
-<h2>Project Detail: Project A</h2>
-            
+<h2>Project Detail: <%= locals.project.name %></h2>
+<br>        
 <div class="filters">
-    <label for="labels">Filter by Labels:</label>
-    <select id="labels" multiple>
-        <option value="bug">Bug</option>
-        <option value="feature">Feature</option>
-        <!-- ... More label options ... -->
-    </select>
-    <label for="author">Filter by Author:</label>
-    <input type="text" id="author" placeholder="Enter author name">
-    <label for="search">Search by Title or Description:</label>
-    <input type="text" id="search" placeholder="Search...">
-    <button class="filter-button">Apply Filters</button>
+    <h3>Filter</h3>
+    <div class="filter-options">
+        <form id="filter-form" action="/issues/filter" method="post">
+            <label for="filter-labels">Filter by Labels:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="label" value="bug"> Bug</label>
+                <label><input type="checkbox" name="label" value="feature"> Feature</label>
+                <label><input type="checkbox" name="label" value="enhancement"> Enhancement</label>
+                <label><input type="checkbox" name="label" value="documentation"> Documentation</label>
+                <label><input type="checkbox" name="label" value="other"> Other</label>
+            </div>
+
+            <label for="filter-author">Filter by Author:</label>
+            <input type="text" id="filter-author" name="author" placeholder="Enter author name">
+
+            <label for="filter-search">Search by Title/Description:</label>
+            <input type="text" id="filter-search" name="search" placeholder="Enter search text">
+
+            <button type="submit" class="apply-button">Apply Filters</button>
+        </form>
+    </div>
 </div>
 
 <ul class="issue-list">
     <!-- Issue items will be dynamically added here -->
 
+    <% locals.project.issues.forEach(issue => { %>
         <li>
-            <div class="label-box" style="background-color: #e74c3c"></div>
+            <!-- <div class="label-box" style="background-color: "></div> -->
             <div class="labels">
-                    <span class="label" style="background-color: #e74c3c">Bug</span>
-
+                <% issue.labels.forEach(label => { %>
+                    <span class="label" style="background-color: #e74c3c"><%= label %></span>
+                <% }); %>
             </div>
             <div class="issue-details">
-                <div class="issue-title">Issue: Hello</div>
-                <div class="issue-description">Hi</div>
-                <div class="author">Author: Nikhil</div>
+                <div class="issue-title">Issue: <%= issue.title %></div>
+                <div class="issue-description"><%= issue.description %></div>
+                <div class="author">Author: <%= issue.author %></div>
             </div>
         </li>
-   
+    <% }); %>
 </ul>
 
-<a href="#" class="create-issue-button">Create New Issue</a>
+<a href="/issues/create-issue/<%= locals.project._id %>" class="create-issue-button">Create New Issue</a>
         

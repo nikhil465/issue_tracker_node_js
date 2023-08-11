@@ -12,23 +12,7 @@ $label-colors: (
 .filters {
     margin-bottom: 20px;
 
-    label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: $secondary-color;
-    }
-
-    select,
-    input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    button.filter-button {
+    .filter-button {
         display: inline-block;
         padding: 8px 20px;
         background-color: $primary-color;
@@ -40,6 +24,52 @@ $label-colors: (
 
         &:hover {
             background-color: darken($primary-color, 10%);
+        }
+    }
+
+    .filter-options {
+        margin-top: 10px;
+
+        form {
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: $secondary-color;
+                font-weight: bold;
+            }
+
+            .checkbox-group {
+                display: flex;
+                flex-wrap: wrap;
+
+                label {
+                    margin-right: 15px;
+                }
+            }
+
+            select,
+            input[type="text"] {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .apply-button {
+                display: inline-block;
+                padding: 6px 12px;
+                background-color: $primary-color;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: darken($primary-color, 10%);
+                }
+            }
         }
     }
 }
