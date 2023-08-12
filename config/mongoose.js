@@ -1,8 +1,9 @@
 //require the library
 const mongoose = require("mongoose");
+const env = require("../config/environment");
 
 //connect to db
-mongoose.connect(`mongodb://127.0.0.1:27017/issue_tracker_development`);
+mongoose.connect(`mongodb://127.0.0.1:27017/${env.db}`);
 
 //acquire the connection
 const db = mongoose.connection;

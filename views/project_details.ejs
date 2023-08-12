@@ -39,6 +39,7 @@
                 <div class="issue-description"><%= issue.description %></div>
                 <div class="author">Author: <%= issue.author %></div>
             </div>
+            <a href="/issues/delete/<%= issue.id %>?projectId=<%= locals.project._id %>" class="delete-link">Delete</a>
         </li>
     <% }); %>
 </ul>

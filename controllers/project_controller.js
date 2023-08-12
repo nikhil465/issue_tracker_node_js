@@ -1,4 +1,5 @@
 const Project = require("../models/project");
+const Issue = require("../models/issue");
 
 module.exports.createProject = function (req, res) {
   return res.render("create_project", {
@@ -35,5 +36,19 @@ module.exports.projectDetails = async function (req, res) {
     });
   } catch (error) {
     console.log("Error in project details : ", error);
+  }
+};
+
+module.exports.delete = async (req, res) => {
+  try {
+    let project = await Project.findById(req.params.id);
+
+    project.deleteOne();
+
+    await Issue.deleteMany({ project: req.params.id });
+    return res.redirect("back");
+  } catch (err) {
+    console.log("Error in deleting project", err);
+    return res.redirect("back");
   }
 };

@@ -43,6 +43,8 @@ h2 {
 
             &:hover {
                 background-color: darken(red, 10%);
+                color: white; /* Keep the text color white on hover */
+                text-decoration: none;
             }
         }
     }

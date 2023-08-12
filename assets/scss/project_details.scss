@@ -137,6 +137,24 @@ $label-colors: (
                 color: $primary-color;
             }
         }
+
+        .delete-link {
+            flex: 2;
+            width: 70px;
+            background-color: red;
+            color: white;
+            margin: 10px 0;
+            padding: 6px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(red, 10%);
+                color: white; /* Keep the text color white on hover */
+                text-decoration: none;
+            }
+        }
     }
 }
 

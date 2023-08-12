@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "prod_start": "NODE_ENV=production && nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nikhil Lomate",
@@ -14,6 +15,8 @@
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
     "mongoose": "^7.4.2",
-    "node-sass": "^9.0.0"
+    "morgan": "^1.10.0",
+    "node-sass": "^9.0.0",
+    "rotating-file-stream": "^3.1.1"
   }
 }

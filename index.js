@@ -5,20 +5,26 @@ const expressLayouts = require("express-ejs-layouts");
 const sassMiddleware = require("node-sass-middleware");
 const path = require("path");
 const db = require("./config/mongoose");
+const env = require("./config/environment");
+const morgan = require("morgan");
 
-app.use(
-  sassMiddleware({
-    src: path.join(__dirname, "./assets", "/scss"),
-    dest: path.join(__dirname, "./assets", "/css"),
-    debug: true,
-    outputStyle: "extended",
-    prefix: "/css",
-  })
-);
+if (env.name == "development") {
+  app.use(
+    sassMiddleware({
+      src: path.join(__dirname, env.asset_path, "scss"),
+      dest: path.join(__dirname, env.asset_path, "css"),
+      debug: true,
+      outputStyle: "extended",
+      prefix: "/css",
+    })
+  );
+}
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static("./assets"));
+app.use(express.static(env.asset_path));
+
+app.use(morgan(env.morgan.mode, env.morgan.options));
 
 app.use(expressLayouts);
 //make the uploads path available to the browser

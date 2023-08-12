@@ -29,7 +29,10 @@ h2 {
       text-decoration: none;
       transition: background-color 0.3s ease; }
       .project-list li .delete-link:hover {
-        background-color: #cc0000; }
+        background-color: #cc0000;
+        color: white;
+        /* Keep the text color white on hover */
+        text-decoration: none; }
 
 .create-button {
   display: inline-block;

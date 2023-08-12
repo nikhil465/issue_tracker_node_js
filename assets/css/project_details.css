@@ -86,6 +86,21 @@
       transition: color 0.3s ease; }
       #issue-list li a:hover {
         color: #007bff; }
+    #issue-list li .delete-link {
+      flex: 2;
+      width: 70px;
+      background-color: red;
+      color: white;
+      margin: 10px 0;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease; }
+      #issue-list li .delete-link:hover {
+        background-color: #cc0000;
+        color: white;
+        /* Keep the text color white on hover */
+        text-decoration: none; }
 
 .create-issue-button {
   display: inline-block;

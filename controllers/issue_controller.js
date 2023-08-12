@@ -42,3 +42,21 @@ module.exports.create = async function (req, res) {
     return res.redirect("back");
   }
 };
+
+module.exports.delete = async (req, res) => {
+  try {
+    let project = await Project.findById(req.query.projectId);
+    let issue = await Issue.findByIdAndDelete(req.params.id);
+
+    let index = project.issues.indexOf(req.params.id);
+    if (index > -1) {
+      project.issues.splice(index, 1);
+    }
+
+    project.save();
+    return res.redirect("back");
+  } catch (err) {
+    console.log("Error in deleting project", err);
+    return res.redirect("back");
+  }
+};
