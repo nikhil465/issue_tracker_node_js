@@ -76,14 +76,13 @@ filterIssueForm.addEventListener("submit", function (e) {
     }
     let issueDiv = document.createElement("div");
     issueDiv.classList.add("issue-details");
-    console.log(projectId);
     issueDiv.innerHTML = `
         <div class="issue-details">
             <div class="issue-title">Issue: ${issue.title}</div>
             <div class="issue-description">${issue.description}</div>
             <div class="author">Author: ${issue.author}</div>
         </div>
-        <a href="/issues/delete/${issue.id}?projectId=${projectId}" class="delete-link" >Delete</a>     
+        <a href="/issues/delete/${issue._id}?projectId=${projectId}" class="delete-link" >Delete</a>     
         `;
     li.appendChild(labelsDiv);
     li.appendChild(issueDiv);
