@@ -46,5 +46,8 @@
 
 <a href="/issues/create-issue/<%= locals.project._id %>" class="create-issue-button">Create New Issue</a>
 <div id="issue-data" data="<%=JSON.stringify(project.issues)%>"></div>
+<script>
+    var projectId = "<%= locals.project._id %>";
+  </script>
 <script src="/js/filterIssues.js"></script>
         
