@@ -54,6 +54,9 @@ filterIssueForm.addEventListener("submit", function (e) {
   });
 
   issueList.innerHTML = ``;
+  if (filteredIssues.length === 0) {
+    filteredIssues = issues;
+  }
   for (let issue of filteredIssues) {
     let li = document.createElement("li");
     let labelsDiv = document.createElement("div");
@@ -72,7 +75,8 @@ filterIssueForm.addEventListener("submit", function (e) {
             <div class="issue-title">Issue: ${issue.title}</div>
             <div class="issue-description">${issue.description}</div>
             <div class="author">Author: ${issue.author}</div>
-        </div>     
+        </div>
+        <a href="/issues/delete/${issue.id}?projectId=<%= locals.project._id %>" class="delete-link" >Delete</a>     
         `;
     li.appendChild(labelsDiv);
     li.appendChild(issueDiv);
