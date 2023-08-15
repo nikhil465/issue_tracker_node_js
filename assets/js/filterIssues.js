@@ -15,30 +15,35 @@ filterIssueForm.addEventListener("submit", function (e) {
   let labelsList = filterIssueForm.querySelectorAll("input[type=checkbox]");
   let labelsElements = [...labelsList].filter((ele) => ele.checked);
 
-  let authorVal = filterIssueForm.querySelector(
-    "input[type=text][name=author]"
-  ).ariaValueText;
-
-  let titleDescVal = filterIssueForm.querySelector(
-    "input[type=text][name=search]"
-  ).ariaValueText;
+  let authorVal =
+    document.getElementById("filter-author").value === ""
+      ? null
+      : document.getElementById("filter-author").value;
+  let titleDescVal =
+    document.getElementById("filter-search").value === ""
+      ? null
+      : document.getElementById("filter-search").value;
 
   let [...labelsArr] = labelsElements.map((ele) => ele.value);
 
+  console.log(authorVal, titleDescVal, labelsArr);
   issues.map((ele) => {
     if (ele.author.includes(authorVal)) {
+      console.log("Elel author : ", ele);
       if (!filteredIssues.includes(ele)) {
         filteredIssues.push(ele);
       }
     }
 
     if (ele.title.includes(titleDescVal)) {
+      console.log("Elel title : ", ele);
       if (!filteredIssues.includes(ele)) {
         filteredIssues.push(ele);
       }
     }
 
     if (ele.description.includes(titleDescVal)) {
+      console.log("Elel desc : ", ele);
       if (!filteredIssues.includes(ele)) {
         filteredIssues.push(ele);
       }
@@ -54,6 +59,7 @@ filterIssueForm.addEventListener("submit", function (e) {
   });
 
   issueList.innerHTML = ``;
+  console.log(filteredIssues);
   if (filteredIssues.length === 0) {
     filteredIssues = issues;
   }
